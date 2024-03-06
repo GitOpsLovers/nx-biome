@@ -1,3 +1,1 @@
-const biomeConfigFilePattern = '.biome.json';
-
-export default biomeConfigFilePattern;
+export const biomeConfigFile = '.biome.json';

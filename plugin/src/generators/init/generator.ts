@@ -8,7 +8,7 @@ import {
     readNxJson,
     updateNxJson as devkitUpdateNxJson,
 } from '@nx/devkit';
-import biomeConfigFilePattern from '../../utils/config-file';
+import { biomeConfigFile } from '../../utils/config-file';
 import { biomeVersion } from '../../utils/versions';
 
 /**
@@ -26,6 +26,9 @@ function updateDependencies(tree: Tree): GeneratorCallback {
     return addDependenciesToPackageJson(tree, {}, devDependencies);
 }
 
+/**
+ * Update the nx.json file with the required configuration.
+ */
 function updateNxJson(tree: Tree) {
     const nxJson = readNxJson(tree);
     if (!nxJson) {
@@ -35,31 +38,40 @@ function updateNxJson(tree: Tree) {
         return;
     }
 
-    // remove stylelint config files from production inputs
-    const stylelintProjectConfigFilePattern = `!${joinPathFragments('{projectRoot}', biomeConfigFilePattern)}`;
+    const biomeProjectConfigFile = `!${joinPathFragments('{projectRoot}', biomeConfigFile)}`;
+
+    // Add Biome configuration file to the namedInputs.production array
     if (
         nxJson.namedInputs?.production
-      && !nxJson.namedInputs?.production.includes(stylelintProjectConfigFilePattern)
+      && !nxJson.namedInputs?.production.includes(biomeProjectConfigFile)
     ) {
-        nxJson.namedInputs?.production.push(stylelintProjectConfigFilePattern);
+        nxJson.namedInputs?.production.push(biomeProjectConfigFile);
     }
 
-    // Set targetDefault for stylelint
+    // Set targetDefault for Biome
     nxJson.targetDefaults ??= {};
-    nxJson.targetDefaults.stylelint ??= {};
-    nxJson.targetDefaults.stylelint.inputs ??= ['default'];
-    nxJson.targetDefaults.stylelint.cache = true;
+    nxJson.targetDefaults['lint-biome'] ??= {};
+    nxJson.targetDefaults['lint-biome'].inputs ??= ['default'];
+    nxJson.targetDefaults['lint-biome'].cache = true;
 
-    const rootStylelintConfigurationFile = joinPathFragments('{workspaceRoot}', biomeConfigFilePattern);
-    if (!nxJson.targetDefaults.stylelint.inputs.includes(rootStylelintConfigurationFile)) {
-        nxJson.targetDefaults.stylelint.inputs.push(rootStylelintConfigurationFile);
+    const rootBiomeConfigurationFile = joinPathFragments('{workspaceRoot}', biomeConfigFile);
+
+    if (!nxJson.targetDefaults['lint-biome'].inputs.includes(rootBiomeConfigurationFile)) {
+        nxJson.targetDefaults['lint-biome'].inputs.push(rootBiomeConfigurationFile);
     }
 
     devkitUpdateNxJson(tree, nxJson);
 }
 
-export default async function (tree: Tree, options: any) {
+/**
+ * Initialize the generator.
+ */
+async function initGenerator(tree: Tree): Promise<GeneratorCallback> {
     const installTask = updateDependencies(tree);
 
     updateNxJson(tree);
+
+    return installTask;
 }
+
+export default initGenerator;
