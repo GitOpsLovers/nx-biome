@@ -1,0 +1,7 @@
+{
+  "name": "@gitopslovers/nx-sass",
+  "version": "1.5.1",
+  "type": "commonjs",
+  "generators": "./generators.json",
+  "executors": "./executors.json"
+}

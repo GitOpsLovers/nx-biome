@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Schema for Nx sass-compiler executor",
+  "description": "Compiles Sass files to CSS using Sass",
+  "type": "object",
+  "properties": {
+    "outputPath": {
+      "type": "string",
+      "description": "The output path of a project's build.  Relative to the root of the repository."
+    },
+    "main": {
+      "type": "string",
+      "description": "The main file to compile"
+    },
+    "sourceMap": {
+      "type": "boolean",
+      "description": "Generate source maps"
+    }
+  },
+  "required": ["outputPath"]
+}

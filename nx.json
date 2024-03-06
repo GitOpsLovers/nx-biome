@@ -1,4 +1,22 @@
 {
   "extends": "nx/presets/npm.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json"
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/jest.preset.js"
+      ]
+    }
+  },
+  "generators": {},
+  "nxCloudAccessToken": "Njk3ZjhmMGEtYTAwNS00YjY2LThhNTItYTcxOGI4NzA0ZDM1fHJlYWQtd3JpdGU="
 }

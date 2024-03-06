@@ -1,0 +1,14 @@
+{
+  "name": "Nx Sass",
+  "version": "1.0",
+  "extends": ["@nx/workspace"],
+  "generators": {
+    "library": {
+      "factory": "./src/generators/library/generator",
+      "schema": "./src/generators/library/schema.json",
+      "aliases": ["lib"],
+      "x-type": "library",
+      "description": "Creates a Sass library"
+    }
+  }
+}

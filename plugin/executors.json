@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "compiler": {
+      "implementation": "./src/executors/compiler/executor",
+      "schema": "./src/executors/compiler/schema.json",
+      "description": "Compile Sass files to CSS"
+    }
+  }
+}
