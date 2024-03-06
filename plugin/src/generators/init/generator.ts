@@ -10,6 +10,7 @@ import {
 } from '@nx/devkit';
 import { biomeConfigFile } from '../../utils/config-file';
 import { biomeVersion } from '../../utils/versions';
+import { InitGeneratorSchema } from './schema';
 
 /**
  * Update the package.json file with the required dependencies.
@@ -66,7 +67,7 @@ function updateNxJson(tree: Tree) {
 /**
  * Initialize the generator.
  */
-async function initGenerator(tree: Tree): Promise<GeneratorCallback> {
+async function initGenerator(tree: Tree, options: InitGeneratorSchema): Promise<GeneratorCallback> {
     const installTask = updateDependencies(tree);
 
     updateNxJson(tree);

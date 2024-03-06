@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/build/packages/eslint"],
+      "outputs": [
+        "{workspaceRoot}/build/packages/eslint"
+      ],
       "options": {
         "command": "ls"
       }
