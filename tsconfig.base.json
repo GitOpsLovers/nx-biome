@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gitopslovers/nx-sass": ["plugin/src/index.ts"]
+      "@gitopslovers/nx-biome": ["plugin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

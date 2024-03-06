@@ -1,14 +1,19 @@
 {
-  "name": "Nx Sass",
+  "name": "Nx Biome",
   "version": "1.0",
   "extends": ["@nx/workspace"],
   "generators": {
-    "library": {
-      "factory": "./src/generators/library/generator",
-      "schema": "./src/generators/library/schema.json",
-      "aliases": ["lib"],
-      "x-type": "library",
-      "description": "Creates a Sass library"
+    "init": {
+      "factory": "./src/generators/init/generator",
+      "schema": "./src/generators/init/schema.json",
+      "description": "Add Biome configuration and dependencies to the workspace.",
+      "hidden": true
+    },
+    "configuration": {
+      "factory": "./src/generators/configuration/generator",
+      "schema": "./src/generators/configuration/schema.json",
+      "description": "Add Biome configuration to a project.",
+      "aliases": ["config"]
     }
   }
 }

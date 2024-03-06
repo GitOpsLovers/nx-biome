@@ -1,6 +1,6 @@
 {
-  "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultProject": "nx-biome",
   "targetDefaults": {
     "lint": {
       "inputs": [
@@ -16,6 +16,18 @@
         "{workspaceRoot}/jest.preset.js"
       ]
     }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/src/test-setup.[jt]s"
+    ]
   },
   "generators": {},
   "nxCloudAccessToken": "Njk3ZjhmMGEtYTAwNS00YjY2LThhNTItYTcxOGI4NzA0ZDM1fHJlYWQtd3JpdGU="
