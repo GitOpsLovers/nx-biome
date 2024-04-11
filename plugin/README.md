@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/Phillip9587/nx-stylelint/main/banner.svg" alt="nx-stylelint Banner"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/GitOpsLovers/nx-biome/main/banner.jpg" alt="NX Biome"/></p>
 
 <div align="center">
 
