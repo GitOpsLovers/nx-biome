@@ -1,9 +1,9 @@
 {
   "executors": {
-    "compiler": {
-      "implementation": "./src/executors/compiler/executor",
-      "schema": "./src/executors/compiler/schema.json",
-      "description": "Compile Sass files to CSS"
+    "biome-lint": {
+      "implementation": "./src/executors/lint/executor",
+      "schema": "./src/executors/lint/schema.json",
+      "description": "Lint files using Biome"
     }
   }
 }

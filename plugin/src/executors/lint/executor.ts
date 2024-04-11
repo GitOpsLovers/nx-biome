@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { CompileExecutorSchema } from './schema';
+import { LintExecutorSchema } from './schema';
 
 /**
  * Execute a command and return a promise
@@ -32,22 +32,14 @@ export function execPromise(cmd: string): Promise<string> {
 }
 
 /**
- * Run the compile executor
+ * Run the lint executor
  *
- * @param options The options for the compile executor
+ * @param options The options for the lint executor
  */
-export default async function runExecutor(options: CompileExecutorSchema) {
-    let sassCommand = `sass ${options.main} ${options.outputPath}/styles.css`;
+export default async function runExecutor(options: LintExecutorSchema) {
+    const lintCommand = `biome lint ${options.lintFilePatterns}`;
 
-    if (!options.sourceMap) {
-        sassCommand += ' --no-source-map';
-    }
-
-    if (options.watch) {
-        sassCommand += ' --watch';
-    }
-
-    await execPromise(sassCommand);
+    await execPromise(lintCommand);
 
     return {
         success: true,
