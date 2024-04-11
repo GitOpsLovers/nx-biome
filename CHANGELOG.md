@@ -1,4 +1,20 @@
-# 1.1.0 (2024-04-11)
+# [1.2.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.1.0...v1.2.0) (2024-04-11)
+
+
+### Bug Fixes
+
+* add build script ([30eede1](https://github.com/GitOpsLovers/nx-biome/commit/30eede190510efde304e509c49d17bac00a0707c))
+* change build script plugin name ([1845447](https://github.com/GitOpsLovers/nx-biome/commit/1845447c62c3c30f321eb37737199006349f3b2e))
+* fix stripIndents warning message ([f1a3680](https://github.com/GitOpsLovers/nx-biome/commit/f1a3680672395d31679fac56754a93ddf40e243f))
+
+
+### Features
+
+* add linter executor ([f6d095e](https://github.com/GitOpsLovers/nx-biome/commit/f6d095ed633246d0bfa8d36068ca05c8e4687197))
+
+
+
+# [1.1.0](https://github.com/GitOpsLovers/nx-biome/compare/ec909e706a0d4184945dc1f369d316a8ed24ca88...v1.1.0) (2024-04-11)
 
 
 ### Features
