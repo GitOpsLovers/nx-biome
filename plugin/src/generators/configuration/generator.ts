@@ -78,7 +78,7 @@ async function configurationGenerator(
         return;
     }
 
-    logger.info(`Adding Stylelint configuration and target to '${options.project}' ...\n`);
+    logger.info(`🛠️ Adding Biome linter configuration and target to '${options.project}'...\n`);
 
     createBiomeConfig(host, normalizedOptions);
     addBiomeTarget(host, normalizedOptions);
