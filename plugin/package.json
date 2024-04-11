@@ -1,6 +1,6 @@
 {
   "name": "@gitopslovers/nx-biome",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "commonjs",
   "generators": "./generators.json",
   "executors": "./executors.json"
