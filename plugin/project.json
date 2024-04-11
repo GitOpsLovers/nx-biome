@@ -1,5 +1,5 @@
 {
-  "name": "prueba",
+  "name": "nx-biome",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "plugin/src",
   "projectType": "library",
