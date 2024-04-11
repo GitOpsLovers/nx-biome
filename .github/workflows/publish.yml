@@ -1,11 +1,11 @@
-name: Publish to NPM
+name: 🎁 Publish to NPM
 
 on:
   workflow_dispatch:
 
 jobs:
   publish:
-    name: Publish
+    name: 📦 Build package and publish
     runs-on: ubuntu-latest
     permissions:
       contents: read
