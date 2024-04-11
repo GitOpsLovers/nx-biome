@@ -32,6 +32,5 @@
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
-  "generators": {},
-  "nxCloudAccessToken": "Njk3ZjhmMGEtYTAwNS00YjY2LThhNTItYTcxOGI4NzA0ZDM1fHJlYWQtd3JpdGU="
+  "generators": {}
 }
