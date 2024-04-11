@@ -8,15 +8,18 @@
       "project": {
         "type": "string",
         "description": "The name of the project.",
-        "$default": {
-          "$source": "projectName"
-        },
-        "x-priority": "important"
+        "x-priority": "important",
+        "x-prompt": "Which project do you want to add the configuration?",
+        "x-dropdown": "projects"
       },
       "linter": {
         "description": "Add linting with Biome to the project.",
         "type": "boolean",
-        "default": true
+        "default": true,
+        "x-prompt": {
+          "message": "Include the Linter functionality in the configuration?",
+          "type": "boolean"
+        }
       }
     },
     "required": ["project"]

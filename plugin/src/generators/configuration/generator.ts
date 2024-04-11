@@ -1,6 +1,5 @@
 import type { GeneratorCallback, Tree } from '@nx/devkit';
 import {
-    formatFiles,
     joinPathFragments,
     logger,
     offsetFromRoot,
@@ -8,9 +7,7 @@ import {
     updateProjectConfiguration,
     writeJson,
 } from '@nx/devkit';
-import type { Config } from 'stylelint';
 import type { LintExecutorSchema } from '../../executors/lint/schema';
-import { defaultFormatter, isCoreFormatter } from '../../utils/formatter';
 
 import initGenerator from '../init/generator';
 import type { ConfigurationGeneratorSchema } from './schema';
@@ -34,29 +31,33 @@ function normalizeSchema(tree: Tree, options: ConfigurationGeneratorSchema): Nor
 function createBiomeConfig(tree: Tree, options: NormalizedSchema) {
     const config = {
         extends: [joinPathFragments(offsetFromRoot(options.projectRoot), '.biome.json')],
-        ignoreFiles: ['!**/*'],
-        overrides: [
-            {
-                files: ['**/*.css'],
-                rules: {},
-            },
-        ],
+        linter: {
+            enabled: false,
+            rules: {},
+        },
     };
 
-    writeJson<Config>(tree, joinPathFragments(options.projectRoot, '.biome.json'), config);
+    if (options.linter) {
+        config.linter.enabled = true;
+        config.linter.rules = {
+            recommended: true,
+        };
+    }
+
+    writeJson(tree, joinPathFragments(options.projectRoot, '.biome.json'), config);
 }
 
 function addBiomeTarget(tree: Tree, options: NormalizedSchema) {
     const projectConfig = readProjectConfiguration(tree, options.project);
 
     const targetOptions: Partial<LintExecutorSchema> = {
-        lintFilePatterns: [joinPathFragments(options.projectRoot, '**', '*.css')],
+        lintFilePatterns: [joinPathFragments(options.projectRoot, '**', '*.ts')],
     };
 
     projectConfig.targets = {
         ...projectConfig.targets,
-        stylelint: {
-            executor: 'nx-biome:biome-lint',
+        'biome-lint': {
+            executor: '@gitopslovers/nx-biome:biome-lint',
             outputs: ['{options.outputFile}'],
             options: targetOptions,
         },
@@ -67,7 +68,7 @@ function addBiomeTarget(tree: Tree, options: NormalizedSchema) {
 async function configurationGenerator(
     host: Tree,
     options: ConfigurationGeneratorSchema,
-): Promise<void | GeneratorCallback> {
+): Promise<GeneratorCallback> {
     const init = await initGenerator(host, { linter: options.linter });
 
     const normalizedOptions = normalizeSchema(host, options);
