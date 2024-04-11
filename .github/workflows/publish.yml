@@ -34,7 +34,7 @@ jobs:
         run: npm run build
 
       - name: 🎉 Publish to NPM
-        uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v3.1.1
         with:
           token: ${{ secrets.NPM_ACCESS_TOKEN }}
           registry: "https://registry.npmjs.org"

@@ -5,10 +5,11 @@
   "license": "MIT",
   "scripts": {
     "build": "npx nx build nx-biome",
-    "publish": "cd dist && npm publish"
+    "publish": "npx npm-publish dist --token $1"
   },
   "private": true,
   "devDependencies": {
+    "@jsdevtools/npm-publish": "3.1.1",
     "@nx/eslint-plugin": "18.2.4",
     "@nx/jest": "18.2.4",
     "@nx/linter": "18.2.4",
