@@ -19,12 +19,12 @@
 
 # 🚀 Features
 
-nx-stylelint provides a set of power-ups for [Nx](https://nx.dev) to lint your projects with [Stylelint](https://stylelint.io).
+nx-biome provides a set of power-ups for [Nx](https://nx.dev) to lint your projects with [Biome](ttps://biomejs.dev/).
 
-- **Executor**: Provides an executor to lint your styles with Stylelint.
+- **Executor**: Provides an executor to lint your files with Biome.
 - **Generators**: Helping you to configure your projects.
-- **Configuration**: Per Project configuration of Stylelint extending a workspace configuration.
-- **Only Affected**: Uses Nx to support linting only affected projects.
+- **Configuration**: Per Project configuration of Biome extending a workspace configuration.
+- **Only Affected**: Uses Nx to support linting and formatting only affected projects.
 - **Cache**: Uses Nx to cache already linted projects.
 
 # 📦 Installation

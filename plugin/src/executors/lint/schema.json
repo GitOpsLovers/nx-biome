@@ -1,20 +1,12 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "title": "Schema for Nx sass-linter executor",
+  "title": "Schema for Nx Biome linter executor",
   "description": "Lint files using BiomeJS",
   "type": "object",
   "properties": {
-    "outputPath": {
-      "type": "string",
-      "description": "The output path of a project's build.  Relative to the root of the repository."
-    },
-    "main": {
-      "type": "string",
-      "description": "The main file to compile"
-    },
-    "sourceMap": {
-      "type": "boolean",
-      "description": "Generate source maps"
+    "lintFilePatterns": {
+      "type": "array",
+      "description": "List of file patterns to lint"
     }
   },
   "required": ["outputPath"]
