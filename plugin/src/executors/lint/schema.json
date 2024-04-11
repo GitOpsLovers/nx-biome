@@ -9,5 +9,5 @@
       "description": "List of file patterns to lint"
     }
   },
-  "required": ["outputPath"]
+  "required": ["lintFilePatterns"]
 }

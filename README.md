@@ -19,13 +19,13 @@
 
 # 🚀 Features
 
-nx-biome provides a set of power-ups for [Nx](https://nx.dev) to lint your projects with [Biome](ttps://biomejs.dev/).
+@gitopslovers/nx-biome provides a set of power-ups for [Nx](https://nx.dev) to lint, format and analyze your projects with [Biome](ttps://biomejs.dev/).
 
-- **Executor**: Provides an executor to lint your files with Biome.
+- **Executor**: Provides some executor to lint, format and analyze your files with Biome.
 - **Generators**: Helping you to configure your projects.
 - **Configuration**: Per Project configuration of Biome extending a workspace configuration.
-- **Only Affected**: Uses Nx to support linting and formatting only affected projects.
-- **Cache**: Uses Nx to cache already linted projects.
+- **Only Affected**: Uses Nx to support linting formatting and analyzing only affected projects.
+- **Cache**: Uses Nx to cache already touched projects.
 
 # 📦 Installation
 
@@ -37,7 +37,7 @@ npm i -D @gitopslovers/nx-biome
 
 # 🛠️ Configuring Biome for a project
 
-To add a Biome configuration to a project you just have to run the `nx-biome:configuration` generator.
+To add a Biome configuration to a project you just have to run the `@gitopslovers/nx-biome:configuration` generator.
 
 ```shell
 nx g @gitopslovers/nx-biome:configuration --project <projectName>
@@ -49,19 +49,19 @@ At the first run the generator installs all required dependencies and creates a 
 
 # Examples
 
-Run biome-lint for a project
+Run `biome-lint` for a project
 
 ```shell
 nx biome-lint {{projectName}}
 ```
 
-Run biome-lint for all projects
+Run `biome-lint` for all projects
 
 ```shell
 nx run-many --target=biome-lint
 ```
 
-Run biome-lint for affected projects
+Run `biome-lint` for affected projects
 
 ```shell
 nx affected --target=biome-lint
@@ -69,7 +69,7 @@ nx affected --target=biome-lint
 
 # 📖 Documentation
 
-## `nx-biome:configuration` generator
+## `@gitopslovers/nx-biome:configuration` generator
 
 Add Biome configuration to a project.
 
@@ -85,7 +85,7 @@ Add configuration to a project:
 | ------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `project`    | `string`                                                                    | The name of the project.                                                              |
 
-## `nx-biome:biome-lint` executor
+## `@gitopslovers/nx-biome:biome-lint` executor
 
 Run Biome linter on a project.
 
