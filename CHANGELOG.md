@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.1...v1.2.2) (2024-04-11)
+
+
+### Bug Fixes
+
+* change required inputs for linter executor ([c38cdc8](https://github.com/GitOpsLovers/nx-biome/commit/c38cdc86616f011096599a9818ffa2188ad1d624))
+
+
+
 ## [1.2.1](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.0...v1.2.1) (2024-04-11)
 
 
