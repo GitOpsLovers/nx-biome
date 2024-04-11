@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.2...v1.2.3) (2024-04-11)
+
+
+### Bug Fixes
+
+* change linter configuration messages ([ad355a5](https://github.com/GitOpsLovers/nx-biome/commit/ad355a5a81089c9a5c9e88bf514ed8429956c110))
+
+
+
 ## [1.2.2](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.1...v1.2.2) (2024-04-11)
 
 
