@@ -7,6 +7,7 @@ import {
     readJson,
     readNxJson,
     updateNxJson as devkitUpdateNxJson,
+    stripIndents,
 } from '@nx/devkit';
 import { biomeConfigFile } from '../../utils/config-file';
 import { biomeVersion } from '../../utils/versions';
@@ -34,7 +35,7 @@ function updateNxJson(tree: Tree) {
     const nxJson = readNxJson(tree);
     if (!nxJson) {
         logger.warn(
-            stripIndents`nx.json not found. Create a nx.json file and rerun the generator with 'nx run nx-stylelint:init' to configure nx-stylelint inputs and taskrunner options.`,
+            stripIndents`nx.json not found. Create a nx.json file and rerun the generator with \'nx run nx-biome:init\'`,
         );
         return;
     }

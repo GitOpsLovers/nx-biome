@@ -5,12 +5,35 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "nx:run-commands",
-      "outputs": [
-        "{workspaceRoot}/build/packages/eslint"
-      ],
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "command": "ls"
+        "outputPath": "dist",
+        "main": "plugin/src/index.ts",
+        "tsConfig": "plugin/tsconfig.lib.json",
+        "assets": [
+          "plugin/*.md",
+          {
+            "input": "./plugin/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./plugin/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./plugin",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./plugin",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
       }
     },
     "lint": {},
