@@ -3,7 +3,10 @@
   "description": "NX plugin to integrate the Biome toolchain.",
   "version": "1.1.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx build nx-sass",
+    "publish": "cd dist && npm publish"
+  },
   "private": true,
   "devDependencies": {
     "@nx/eslint-plugin": "18.2.4",
