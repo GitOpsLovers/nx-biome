@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.0...v1.2.1) (2024-04-11)
+
+
+### Bug Fixes
+
+* fix linter schema properties ([769fca7](https://github.com/GitOpsLovers/nx-biome/commit/769fca794dcc9b22554ba70909ea967609941a48))
+
+
+
 # [1.2.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.1.0...v1.2.0) (2024-04-11)
 
 
