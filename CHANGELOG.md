@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.4.0...v1.5.0) (2024-08-08)
+
+
+### Features
+
+* add write and unsafe configurations to linter ([2ebc6dc](https://github.com/GitOpsLovers/nx-biome/commit/2ebc6dcb3cc3bbf41c9ab6f0ac1a53d4e28a04b7))
+
+
+
 # [1.4.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.3.0...v1.4.0) (2024-08-08)
 
 
@@ -26,15 +35,6 @@
 
 
 ## [1.2.4](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.3...v1.2.4) (2024-08-08)
-
-
-
-## [1.2.3](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.2...v1.2.3) (2024-04-11)
-
-
-### Bug Fixes
-
-* change linter configuration messages ([ad355a5](https://github.com/GitOpsLovers/nx-biome/commit/ad355a5a81089c9a5c9e88bf514ed8429956c110))
 
 
 
