@@ -1,7 +1,7 @@
 {
   "name": "@gitopslovers/nx-biome",
   "description": "NX plugin to integrate the Biome toolchain.",
-  "version": "1.2.5",
+  "version": "1.3.0",
   "license": "MIT",
   "scripts": {
     "build": "npx nx build nx-biome",

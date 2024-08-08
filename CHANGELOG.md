@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.5...v1.3.0) (2024-08-08)
+
+
+### Features
+
+* update conventional-changelog-action ([f527ca6](https://github.com/GitOpsLovers/nx-biome/commit/f527ca64fe871daa22ae9fc573a8d7cffb5af354))
+
+
+
 ## [1.2.5](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.4...v1.2.5) (2024-08-08)
 
 
@@ -26,15 +35,6 @@
 ### Bug Fixes
 
 * change required inputs for linter executor ([c38cdc8](https://github.com/GitOpsLovers/nx-biome/commit/c38cdc86616f011096599a9818ffa2188ad1d624))
-
-
-
-## [1.2.1](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.0...v1.2.1) (2024-04-11)
-
-
-### Bug Fixes
-
-* fix linter schema properties ([769fca7](https://github.com/GitOpsLovers/nx-biome/commit/769fca794dcc9b22554ba70909ea967609941a48))
 
 
 
