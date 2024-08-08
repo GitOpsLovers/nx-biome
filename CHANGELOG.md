@@ -1,3 +1,12 @@
+## [1.2.5](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.4...v1.2.5) (2024-08-08)
+
+
+### Bug Fixes
+
+* change generated biome.json without dot ([c2ae64f](https://github.com/GitOpsLovers/nx-biome/commit/c2ae64ff0b9ca890160d6efd3d1a1fdf52c68c6c))
+
+
+
 ## [1.2.4](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.3...v1.2.4) (2024-08-08)
 
 
@@ -26,22 +35,6 @@
 ### Bug Fixes
 
 * fix linter schema properties ([769fca7](https://github.com/GitOpsLovers/nx-biome/commit/769fca794dcc9b22554ba70909ea967609941a48))
-
-
-
-# [1.2.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.1.0...v1.2.0) (2024-04-11)
-
-
-### Bug Fixes
-
-* add build script ([30eede1](https://github.com/GitOpsLovers/nx-biome/commit/30eede190510efde304e509c49d17bac00a0707c))
-* change build script plugin name ([1845447](https://github.com/GitOpsLovers/nx-biome/commit/1845447c62c3c30f321eb37737199006349f3b2e))
-* fix stripIndents warning message ([f1a3680](https://github.com/GitOpsLovers/nx-biome/commit/f1a3680672395d31679fac56754a93ddf40e243f))
-
-
-### Features
-
-* add linter executor ([f6d095e](https://github.com/GitOpsLovers/nx-biome/commit/f6d095ed633246d0bfa8d36068ca05c8e4687197))
 
 
 
