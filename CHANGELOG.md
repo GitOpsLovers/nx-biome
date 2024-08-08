@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.3.0...v1.4.0) (2024-08-08)
+
+
+### Features
+
+* lint and format all typescript files ([6be16d4](https://github.com/GitOpsLovers/nx-biome/commit/6be16d4632b6acd6bee702f03472d07c82e80a6d))
+
+
+
 # [1.3.0](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.5...v1.3.0) (2024-08-08)
 
 
@@ -26,15 +35,6 @@
 ### Bug Fixes
 
 * change linter configuration messages ([ad355a5](https://github.com/GitOpsLovers/nx-biome/commit/ad355a5a81089c9a5c9e88bf514ed8429956c110))
-
-
-
-## [1.2.2](https://github.com/GitOpsLovers/nx-biome/compare/v1.2.1...v1.2.2) (2024-04-11)
-
-
-### Bug Fixes
-
-* change required inputs for linter executor ([c38cdc8](https://github.com/GitOpsLovers/nx-biome/commit/c38cdc86616f011096599a9818ffa2188ad1d624))
 
 
 
