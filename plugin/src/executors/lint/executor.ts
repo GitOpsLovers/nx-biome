@@ -9,26 +9,26 @@ import type { LintExecutorSchema } from './schema';
  * @returns A promise that resolves with the output of the command
  */
 export function execPromise(cmd: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const response = exec(cmd, (err, data) => {
-      response.removeAllListeners();
+    return new Promise((resolve, reject) => {
+        const response = exec(cmd, (err, data) => {
+            response.removeAllListeners();
 
-      if (err) {
-        reject(err);
-        return;
-      }
+            if (err) {
+                reject(err);
+                return;
+            }
 
-      resolve(data);
+            resolve(data);
+        });
+
+        response.stdout.on('data', (data) => {
+            console.log(data);
+        });
+
+        response.stderr.on('data', (data) => {
+            console.error(data);
+        });
     });
-
-    response.stdout.on('data', (data) => {
-      console.log(data);
-    });
-
-    response.stderr.on('data', (data) => {
-      console.error(data);
-    });
-  });
 }
 
 /**
@@ -37,11 +37,11 @@ export function execPromise(cmd: string): Promise<string> {
  * @param options The options for the lint executor
  */
 export default async function runExecutor(options: LintExecutorSchema) {
-  const lintCommand = `biome lint ${options.lintFilePatterns}`;
+    const lintCommand = `biome lint ${options.lintFilePatterns}`;
 
-  await execPromise(lintCommand);
+    await execPromise(lintCommand);
 
-  return {
-    success: true,
-  };
+    return {
+        success: true,
+    };
 }
