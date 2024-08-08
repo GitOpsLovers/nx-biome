@@ -23,7 +23,7 @@ jobs:
 
       - name: 📝 Update Changelog
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v5.2.1
+        uses: TriPSs/conventional-changelog-action@v5.3.0
         with:
           github-token: ${{ steps.app_auth.outputs.token }}
           version-file: './package.json,./package-lock.json'
