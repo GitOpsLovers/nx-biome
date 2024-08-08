@@ -1,1 +1,1 @@
-export const biomeConfigFile = '.biome.json';
+export const biomeConfigFile = 'biome.json';

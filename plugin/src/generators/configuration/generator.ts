@@ -30,7 +30,7 @@ function normalizeSchema(tree: Tree, options: ConfigurationGeneratorSchema): Nor
 
 function createBiomeConfig(tree: Tree, options: NormalizedSchema) {
     const config = {
-        extends: [joinPathFragments(offsetFromRoot(options.projectRoot), '.biome.json')],
+        extends: [joinPathFragments(offsetFromRoot(options.projectRoot), 'biome.json')],
         linter: {
             enabled: false,
             rules: {},
@@ -44,7 +44,7 @@ function createBiomeConfig(tree: Tree, options: NormalizedSchema) {
         };
     }
 
-    writeJson(tree, joinPathFragments(options.projectRoot, '.biome.json'), config);
+    writeJson(tree, joinPathFragments(options.projectRoot, 'biome.json'), config);
 }
 
 function addBiomeTarget(tree: Tree, options: NormalizedSchema) {
