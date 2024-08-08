@@ -15,6 +15,10 @@ import type { InitGeneratorSchema } from './schema';
 
 /**
  * Update the package.json file with the required dependencies.
+ *
+ * @param tree The current file tree.
+ *
+ * @returns The generator callback.
  */
 function updateDependencies(tree: Tree): GeneratorCallback {
     const packageJson = readJson(tree, 'package.json');
@@ -30,8 +34,10 @@ function updateDependencies(tree: Tree): GeneratorCallback {
 
 /**
  * Update the nx.json file with the required configuration.
+ *
+ * @param tree The current file tree.
  */
-function updateNxJson(tree: Tree) {
+function updateNxJson(tree: Tree): void {
     const nxJson = readNxJson(tree);
     if (!nxJson) {
         logger.warn(
@@ -74,11 +80,13 @@ function updateNxJson(tree: Tree) {
 
 /**
  * Initialize the generator.
+ *
+ * @param tree The current file tree.
+ * @param options The generator options.
+ *
+ * @returns The generator callback.
  */
-async function initGenerator(
-    tree: Tree,
-    options: InitGeneratorSchema,
-): Promise<GeneratorCallback> {
+async function initGenerator(tree: Tree, options: InitGeneratorSchema): Promise<GeneratorCallback> {
     const installTask = updateDependencies(tree);
 
     updateNxJson(tree);

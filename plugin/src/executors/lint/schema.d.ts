@@ -3,4 +3,6 @@
  */
 export interface LintExecutorSchema {
     lintFilePatterns: string[];
+    write: boolean;
+    unsafe: boolean;
 }

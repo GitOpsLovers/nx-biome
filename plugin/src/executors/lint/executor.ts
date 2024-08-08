@@ -22,10 +22,12 @@ export function execPromise(cmd: string): Promise<string> {
         });
 
         response.stdout.on('data', (data) => {
+            // eslint-disable-next-line no-console
             console.log(data);
         });
 
         response.stderr.on('data', (data) => {
+            // eslint-disable-next-line no-console
             console.error(data);
         });
     });
@@ -35,9 +37,19 @@ export function execPromise(cmd: string): Promise<string> {
  * Run the lint executor
  *
  * @param options The options for the lint executor
+ *
+ * @returns A promise that resolves with the result of the lint executor
  */
 export default async function runExecutor(options: LintExecutorSchema) {
-    const lintCommand = `biome lint ${options.lintFilePatterns}`;
+    let lintCommand = `biome lint ${options.lintFilePatterns}`;
+
+    if (options.write) {
+        lintCommand += ' --write';
+    }
+
+    if (options.unsafe) {
+        lintCommand += ' --unsafe';
+    }
 
     await execPromise(lintCommand);
 
